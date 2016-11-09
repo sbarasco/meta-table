@@ -1,0 +1,12 @@
+[Unit]
+Description=Coffee table controler
+After=network.target
+
+[Service]
+ExecStart=tablectrl
+Type=simple
+Restart=always
+RestartSec=0
+
+[Install]
+WantedBy=multi-user.target
