@@ -7,6 +7,7 @@ SRC_URI = "\
         file://COPYING \
         file://wlan0.network \
         file://wpa_supplicant-wlan0.conf \
+        file://wpa_supplicant@wlan0.service \
 "
 S = "${WORKDIR}"
 
@@ -28,6 +29,7 @@ do_install () {
     install -m 0755 ${WORKDIR}/wlan0.network ${D}${sysconfdir}/systemd/network
     install -m 0755 ${WORKDIR}/wpa_supplicant-wlan0.conf ${D}${sysconfdir}/wpa_supplicant
     ln -sf ${systemd_unitdir}/system/wpa_supplicant@.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/wpa_supplicant@wlan0.service
+     install -m 0755 ${WORKDIR}/wpa_supplicant@wlan0.service ${D}${sysconfdir}/systemd/system/multi-user.target.wants/wpa_supplicant@wlan0.service
 }
 
 

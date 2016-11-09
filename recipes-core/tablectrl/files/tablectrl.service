@@ -3,7 +3,7 @@ Description=Coffee table controler
 After=network.target
 
 [Service]
-ExecStart=tablectrl
+ExecStart=/usr/bin/tablectrl
 Type=simple
 Restart=always
 RestartSec=0
