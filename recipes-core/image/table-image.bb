@@ -19,6 +19,7 @@ IMAGE_INSTALL += " \
                    tablectrl \
                    linux-firmware \
                    crda \
+                   teensy-loader \
 	"
 
 IMAGE_ROOTFS_EXTRA_SPACE = "65536"

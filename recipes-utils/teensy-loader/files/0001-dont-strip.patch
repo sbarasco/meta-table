@@ -1,0 +1,25 @@
+From aa4681590551e9aada91cf3aa1e94e12d2846e66 Mon Sep 17 00:00:00 2001
+From: Sebastien Barascou <sebastien.barascou@smile.fr>
+Date: Thu, 10 Nov 2016 11:35:03 +0100
+Subject: [PATCH] dont strip
+
+---
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index 4c49987..1c0ca91 100644
+--- a/Makefile
++++ b/Makefile
+@@ -12,7 +12,7 @@ ifeq ($(OS), LINUX)  # also works on FreeBSD
+ CC ?= gcc
+ CFLAGS ?= -O2 -Wall
+ teensy_loader_cli: teensy_loader_cli.c
+-	$(CC) $(CFLAGS) -s -DUSE_LIBUSB -o teensy_loader_cli teensy_loader_cli.c -lusb
++	$(CC) $(CFLAGS) -DUSE_LIBUSB -o teensy_loader_cli teensy_loader_cli.c -lusb
+ 
+ 
+ else ifeq ($(OS), WINDOWS)
+-- 
+2.7.4
+
